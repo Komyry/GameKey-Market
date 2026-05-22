@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KomTeam GameKeys - Купи ключи к играм со скидками</title>
+    <title>GameKeys - Купи ключи к играм со скидками</title>
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,7 +12,7 @@
         <div class="container">
             <div class="logo">
                 <i class="fas fa-key"></i>
-                <h1>KomTeam GameKeys</h1>
+                <h1>GameKeys</h1>
             </div>
             <nav>
                 <ul>
@@ -22,8 +22,12 @@
                     <li><a href="#">Контакты</a></li>
                 </ul>
             </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
             <div class="search-bar">
-                <input type="text" placeholder="Поиск игр...">
+                <input type="text" placeholder="Поиск игр..." id="searchInput">
                 <button><i class="fas fa-search"></i></button>
             </div>
         </div>
@@ -37,69 +41,105 @@
         </div>
     </section>
 
-    <section class="games" id="games">
+    <section class="filters" id="filters">
         <div class="container">
-            <h2>Популярные игры</h2>
-            <div class="game-grid">
-                <!-- Пример игры -->
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="https://basket-17.wbbasket.ru/vol2830/part283031/283031179/images/big/1.webp" alt="Cyberpunk 2077">
-                    </div>
-                    <div class="game-details">
-                        <h3>Cyberpunk 2077</h3>
-                        <p class="price">1 999 <span class="original-price">3 499</span> рублей</p>
-                        <p class="discount">-43%</p>
-                        <button class="btn">Купить</button>
-                    </div>
-                </div>
-
-                <!-- Еще примеры игр -->
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="https://avatars.mds.yandex.net/get-mpic/19851095/2a0000019d30d6ae8482b9be5e092c80236d/orig" alt="The Witcher 3">
-                    </div>
-                    <div class="game-details">
-                        <h3>The Witcher 3: Wild Hunt</h3>
-                        <p class="price">1 499 <span class="original-price">2 499</span> рублей</p>
-                        <p class="discount">-40%</p>
-                        <button class="btn">Купить</button>
+            <h2>Фильтры</h2>
+            <div class="filter-options">
+                <div class="filter-group">
+                    <h3>Жанры</h3>
+                    <div class="tags">
+                        <label class="tag"><input type="checkbox" value="action" checked> Action</label>
+                        <label class="tag"><input type="checkbox" value="rpg" checked> RPG</label>
+                        <label class="tag"><input type="checkbox" value="fps" checked> FPS</label>
+                        <label class="tag"><input type="checkbox" value="strategy" checked> Стратегия</label>
+                        <label class="tag"><input type="checkbox" value="racing"> Гонки</label>
+                        <label class="tag"><input type="checkbox" value="simulation"> Симулятор</label>
                     </div>
                 </div>
-
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="https://avatars.mds.yandex.net/i?id=7c1068d1fe2c5221c65acf117eca8cce_l-16110730-images-thumbs&n=13" alt="Doom Eternal">
-                    </div>
-                    <div class="game-details">
-                        <h3>Doom Eternal</h3>
-                        <p class="price">1 299 <span class="original-price">2 199</span> рублей</p>
-                        <p class="discount">-41%</p>
-                        <button class="btn">Купить</button>
+                <div class="filter-group">
+                    <h3>Платформы</h3>
+                    <div class="tags">
+                        <label class="tag"><input type="checkbox" value="pc" checked> PC</label>
+                        <label class="tag"><input type="checkbox" value="xbox"> Xbox</label>
+                        <label class="tag"><input type="checkbox" value="playstation"> PlayStation</label>
+                        <label class="tag"><input type="checkbox" value="nintendo"> Nintendo</label>
                     </div>
                 </div>
-
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="https://avatars.mds.yandex.net/i?id=12802b7e14f31998e295d799d4d9beb229107aae-4451422-images-thumbs&n=13" alt="GTA V">
-                    </div>
-                    <div class="game-details">
-                        <h3>Grand Theft Auto V</h3>
-                        <p class="price">999 <span class="original-price">1 999</span> рублей</p>
-                        <p class="discount">-50%</p>
-                        <button class="btn">Купить</button>
+                <div class="filter-group">
+                    <h3>Цена</h3>
+                    <div class="price-range">
+                        <input type="range" min="0" max="5000" value="5000" id="priceRange">
+                        <div class="price-range-values">
+                            <span id="minPrice">0</span>
+                            <span id="maxPrice">5000</span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button class="btn filter-btn">Применить фильтры</button>
         </div>
     </section>
+
+    <section class="games" id="games">
+        <div class="container">
+            <h2>Популярные игры</h2>
+            <div class="game-grid" id="gameGrid">
+                <!-- Карточки игр будут добавляться через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Корзина -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <span class="close-btn" id="closeCart">&times;</span>
+            <h2>Корзина</h2>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-total">
+                <p>Итого: <span id="cartTotal">0</span> ₽</p>
+                <button class="btn checkout-btn" id="checkoutBtn">Оплатить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Окно оплаты -->
+    <div class="payment-modal" id="paymentModal" style="display: none;">
+        <div class="payment-content">
+            <span class="close-btn" id="closePayment">&times;</span>
+            <h2>Оплата</h2>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label>Сумма:</label>
+                    <input type="text" id="paymentAmount" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Электронная почта:</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Способ оплаты:</label>
+                    <select required>
+                        <option value="webmoney">WebMoney</option>
+                        <option value="qiwi">Qiwi</option>
+                        <option value="bank">Банковская карта</option>
+                        <option value="cash">Наличными</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Завершить оплату</button>
+            </form>
+            <div class="payment-instructions">
+                <h3>Инструкции:</h3>
+                <p>После оплаты отправьте чек на почту <strong>support@gamekeys.ru</strong>.</p>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <i class="fas fa-key"></i>
-                    <h3>KomTeam GameKeys</h3>
+                    <h3>GameKeys</h3>
                 </div>
                 <div class="footer-links">
                     <h4>Ссылки</h4>
@@ -118,8 +158,10 @@
                     </ul>
                 </div>
             </div>
-            <p class="copyright">&copy; 2026 KomTeam GameKeys. Все права защищены.</p>
+            <p class="copyright">&copy; 2024 GameKeys. Все права защищены.</p>
         </div>
     </footer>
+
+    <script src="Script.js"></script>
 </body>
 </html>
