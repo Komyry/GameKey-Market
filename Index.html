@@ -16,22 +16,48 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Ключи</a></li>
-                    <li><a href="#">Скидки</a></li>
+                    <li><a href="Index.html">Главная</a></li>
                     <li><a href="#">О нас</a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count" id="cartCount">0</span>
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Поиск игр..." id="searchInput">
-                <button><i class="fas fa-search"></i></button>
+            <div class="header-buttons">
+                <div class="user-info" id="userInfo">
+                    <span id="userName"></span>
+                    <button class="btn logout-btn" id="logoutBtn">Выйти</button>
+                </div>                
+                <!-- Обновлённая строка поиска (заменить существующую) -->
+                <div class="search-bar">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Поиск игр..."
+                        onkeyup="filterGames()"
+                    >
+                    <button id="searchButton"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- Модальное окно корзины -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <span class="close-cart" id="closeCart">&times;</span>
+            <h2>Ваша корзина</h2>
+            <div class="cart-items" id="cartItems">
+                <!-- Товары добавляются сюда динамически -->
+            </div>
+            <div class="cart-total">
+                <p>Итого: <span id="cartTotal">0</span> ₽</p>
+                <button class="btn checkout-btn" id="checkoutBtn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
 
     <section class="hero">
         <div class="container">
@@ -41,98 +67,64 @@
         </div>
     </section>
 
-    <section class="filters" id="filters">
-        <div class="container">
-            <h2>Фильтры</h2>
-            <div class="filter-options">
-                <div class="filter-group">
-                    <h3>Жанры</h3>
-                    <div class="tags">
-                        <label class="tag"><input type="checkbox" value="action" checked> Action</label>
-                        <label class="tag"><input type="checkbox" value="rpg" checked> RPG</label>
-                        <label class="tag"><input type="checkbox" value="fps" checked> FPS</label>
-                        <label class="tag"><input type="checkbox" value="strategy" checked> Стратегия</label>
-                        <label class="tag"><input type="checkbox" value="racing"> Гонки</label>
-                        <label class="tag"><input type="checkbox" value="simulation"> Симулятор</label>
-                    </div>
-                </div>
-                <div class="filter-group">
-                    <h3>Платформы</h3>
-                    <div class="tags">
-                        <label class="tag"><input type="checkbox" value="pc" checked> PC</label>
-                        <label class="tag"><input type="checkbox" value="xbox"> Xbox</label>
-                        <label class="tag"><input type="checkbox" value="playstation"> PlayStation</label>
-                        <label class="tag"><input type="checkbox" value="nintendo"> Nintendo</label>
-                    </div>
-                </div>
-                <div class="filter-group">
-                    <h3>Цена</h3>
-                    <div class="price-range">
-                        <input type="range" min="0" max="5000" value="5000" id="priceRange">
-                        <div class="price-range-values">
-                            <span id="minPrice">0</span>
-                            <span id="maxPrice">5000</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="btn filter-btn">Применить фильтры</button>
-        </div>
-    </section>
-
     <section class="games" id="games">
         <div class="container">
             <h2>Популярные игры</h2>
-            <div class="game-grid" id="gameGrid">
-                <!-- Карточки игр будут добавляться через JavaScript -->
+            <div class="game-grid">
+                <!-- Пример игры 1 -->
+                <div class="game-card" data-id="1" data-price="1999" data-discount="3499">
+                    <div class="game-image">
+                        <img src="https://via.placeholder.com/300x400?text=Cyberpunk+2077" alt="Cyberpunk 2077">
+                    </div>
+                    <div class="game-details">
+                        <h3>Cyberpunk 2077</h3>
+                        <p class="price">1 999 <span class="original-price">3 499</span> рублей</p>
+                        <p class="discount">-43%</p>
+                        <button class="btn add-to-cart" data-id="1">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- Пример игры 2 -->
+                <div class="game-card" data-id="2" data-price="1499" data-discount="2499">
+                    <div class="game-image">
+                        <img src="https://via.placeholder.com/300x400?text=The+Witcher+3" alt="The Witcher 3">
+                    </div>
+                    <div class="game-details">
+                        <h3>The Witcher 3: Wild Hunt</h3>
+                        <p class="price">1 499 <span class="original-price">2 499</span> рублей</p>
+                        <p class="discount">-40%</p>
+                        <button class="btn add-to-cart" data-id="2">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- Пример игры 3 -->
+                <div class="game-card" data-id="3" data-price="1299" data-discount="2199">
+                    <div class="game-image">
+                        <img src="https://via.placeholder.com/300x400?text=Doom+Eternal" alt="Doom Eternal">
+                    </div>
+                    <div class="game-details">
+                        <h3>Doom Eternal</h3>
+                        <p class="price">1 299 <span class="original-price">2 199</span> рублей</p>
+                        <p class="discount">-41%</p>
+                        <button class="btn add-to-cart" data-id="3">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- Пример игры 4 -->
+                <div class="game-card" data-id="4" data-price="999" data-discount="1999">
+                    <div class="game-image">
+                        <img src="https://via.placeholder.com/300x400?text=GTA+V" alt="GTA V">
+                    </div>
+                    <div class="game-details">
+                        <h3>Grand Theft Auto V</h3>
+                        <p class="price">999 <span class="original-price">1 999</span> рублей</p>
+                        <p class="discount">-50%</p>
+                        <button class="btn add-to-cart" data-id="4">В корзину</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Корзина -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <span class="close-btn" id="closeCart">&times;</span>
-            <h2>Корзина</h2>
-            <div class="cart-items" id="cartItems"></div>
-            <div class="cart-total">
-                <p>Итого: <span id="cartTotal">0</span> ₽</p>
-                <button class="btn checkout-btn" id="checkoutBtn">Оплатить</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Окно оплаты -->
-    <div class="payment-modal" id="paymentModal" style="display: none;">
-        <div class="payment-content">
-            <span class="close-btn" id="closePayment">&times;</span>
-            <h2>Оплата</h2>
-            <form id="paymentForm">
-                <div class="form-group">
-                    <label>Сумма:</label>
-                    <input type="text" id="paymentAmount" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Электронная почта:</label>
-                    <input type="email" required>
-                </div>
-                <div class="form-group">
-                    <label>Способ оплаты:</label>
-                    <select required>
-                        <option value="webmoney">WebMoney</option>
-                        <option value="qiwi">Qiwi</option>
-                        <option value="bank">Банковская карта</option>
-                        <option value="cash">Наличными</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn">Завершить оплату</button>
-            </form>
-            <div class="payment-instructions">
-                <h3>Инструкции:</h3>
-                <p>После оплаты отправьте чек на почту <strong>support@gamekeys.ru</strong>.</p>
-            </div>
-        </div>
-    </div>
 
     <footer>
         <div class="container">
@@ -144,8 +136,7 @@
                 <div class="footer-links">
                     <h4>Ссылки</h4>
                     <ul>
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">Ключи</a></li>
+                        <li><a href="Index.html">Главная</a></li>
                         <li><a href="#">О нас</a></li>
                         <li><a href="#">Контакты</a></li>
                     </ul>
@@ -158,7 +149,7 @@
                     </ul>
                 </div>
             </div>
-            <p class="copyright">&copy; 2024 GameKeys. Все права защищены.</p>
+            <p class="copyright">&copy; 2026 GameKeys. Все права защищены.</p>
         </div>
     </footer>
 
