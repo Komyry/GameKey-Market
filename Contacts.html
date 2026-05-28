@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameKeys - Контакты</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-key"></i>
+                <h1>GameKeys</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Index.html">Главная</a></li>
+                    <li><a href="About.html">О нас</a></li>
+                    <li><a href="Contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <div class="user-info" id="userInfo">
+                    <span id="userName"></span>
+                    <button class="btn logout-btn" id="logoutBtn">Выйти</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Поиск игр...">
+                    <button id="searchButton"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="contacts-banner">
+        <div class="container">
+            <h2>Контакты GameKeys</h2>
+            <p>Есть вопросы? Напишите нам прямо сейчас!</p>
+        </div>
+    </section>
+
+    <section class="contacts-content">
+        <div class="container">
+            <div class="contacts-grid">
+                <!-- Контактная информация -->
+                <div class="contact-info">
+                    <h3>Наши контактные данные</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Адрес</h4>
+                            <p>Москва, ул. Полярная, д. 34, офис 504</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p>+7 (495) 123-45-67</p>
+                            <p>+7 (915) 234-56-78 (WhatsApp/Telegram)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@gamekeys.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Режим работы</h4>
+                            <p>Пн-Сб: 9:00 - 21:00</p>
+                            <p>Вс: Выходной</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4>Соцсети</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Форма обратной связи -->
+                <div class="contact-form">
+                    <h3>Напишите нам</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Телефон (опционально)">
+                        </div>
+                        <div class="form-group">
+                            <select id="subject" required>
+                                <option value="">Тема сообщения</option>
+                                <option value="заказ">Вопрос по заказу</option>
+                                <option value="техническая">Техническая поддержка</option>
+                                <option value="обратная-связь">Обратная связь</option>
+                                <option value="другое">Другое</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Ваше сообщение" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Отправить</button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Как оплатить заказ?</h4>
+                    <p>Мы принимаем оплату банковскими картами через систему безопасных платежей. Ваши данные защищены и не передаются третьим лицам.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Как получить ключ?</h4>
+                    <p>После успешной оплаты ключ отправляется на ваш email в течение 5-10 минут. Если письмо не пришло, проверьте папку "Спам".</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Какие игры доступны для покупки?</h4>
+                    <p>У нас представлены ключи к актуальным играм с популярных платформ: Steam, Epic Games, GOG и других. Смотрите наш каталог на главной странице.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Можно ли вернуть деньги?</h4>
+                    <p>Возврат средств возможен в течение 14 дней с момента получения ключа, если игра не была активирована. Подробности см. в политике возвратов.</p>
+                </div>
+            </div>
+            <a href="#" class="btn show-all-faq">Все вопросы</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-key"></i>
+                    <h3>GameKeys</h3>
+                    <p>Купи ключи к играм со скидками до 70%!</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Ссылки</h4>
+                    <ul>
+                        <li><a href="Index.html">Главная</a></li>
+                        <li><a href="About.html">О нас</a></li>
+                        <li><a href="Contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <h4>Соцсети</h4>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-telegram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-vk"></i></a></li>
+                        <li><a href="#"><i class="fab fa-discord"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 GameKeys. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Проверка авторизации
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                document.getElementById('userName').textContent = `Привет, ${user.name}!`;
+                document.querySelector('.user-info').classList.add('signed-in');
+            }
+
+            // Форма обратной связи
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formStatus = document.getElementById('formStatus');
+
+                    // Валидация
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
+
+                    if (!name || !email || !message) {
+                        formStatus.innerHTML = '<p class="error">Пожалуйста, заполните все обязательные поля!</p>';
+                        return;
+                    }
+
+                    // Здесь должен быть реальный запрос на сервер (или симуляция)
+                    // В реальном проекте использовали бы fetch/axios для отправки данных
+                    formStatus.innerHTML = '<p class="success">Спасибо! Ваше сообщение успешно отправлено.</p>';
+
+                    // Очистка формы
+                    contactForm.reset();
+
+                    // Симуляция отправки (в реальном проекте убираем setTimeout)
+                    setTimeout(() => {
+                        formStatus.innerHTML = '';
+                    }, 5000);
+                });
+            }
+
+            // Выход из аккаунта
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    localStorage.removeItem('currentUser');
+                    document.querySelector('.user-info').classList.remove('signed-in');
+                    document.getElementById('userName').textContent = '';
+                    alert('Вы вышли из аккаунта!');
+                    window.location.href = 'Index.html';
+                });
+            }
+
+            // Показать все вопросы (минималистичная реализация)
+            const showAllFaq = document.querySelector('.show-all-faq');
+            if (showAllFaq) {
+                showAllFaq.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Список всех вопросов будет добавлен в будущем обновлении!');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

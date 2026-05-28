@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameKeys - О нас</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили для страницы "О нас" */
+        .about-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://via.placeholder.com/1920x400/1a1a2e/ffffff?text=О+нас');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-banner h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .about-banner p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .about-content {
+            padding: 60px 0;
+            background: #f9f9f9;
+        }
+
+        .about-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #6C63FF;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .about-text h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .team-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid #6C63FF;
+        }
+
+        .team-name {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            color: #6C63FF;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .team-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .certificates-section {
+            padding: 60px 0;
+            background: #f9f9f9;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .certificate-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .certificate-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            background: #6C63FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+
+        .certificate-name {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .testimonials-section {
+            padding: 60px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-item {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .testimonial-text {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 12px;
+        }
+
+        .author-info h5 {
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .author-role {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .mission-statement {
+            background: linear-gradient(135deg, #6C63FF, #5A51E6);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .mission-statement h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .mission-statement p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .team-member, .certificate-item, .testimonial-item {
+            opacity: 0;
+        }
+
+        .team-member:nth-child(1), .certificate-item:nth-child(1), .testimonial-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .team-member:nth-child(2), .certificate-item:nth-child(2), .testimonial-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .team-member:nth-child(3), .certificate-item:nth-child(3), .testimonial-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .team-member:nth-child(4), .certificate-item:nth-child(4), .testimonial-item:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-key"></i>
+                <h1>GameKeys</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Index.html">Главная</a></li>
+                    <li><a href="About.html">О нас</a></li>
+                    <li><a href="Contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <div class="user-info" id="userInfo">
+                    <span id="userName"></span>
+                    <button class="btn logout-btn" id="logoutBtn">Выйти</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Поиск игр...">
+                    <button id="searchButton"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-banner">
+        <div class="container">
+            <h2>Мы — GameKeys</h2>
+            <p>Команда энтузиастов, которая делает доступными лучшие игры для всех геймеров. Надежные ключи, честные цены и отличная поддержка — вот наш девиз!</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="container">
+            <div class="about-stats">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">лет на рынке</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">100K+</div>
+                    <div class="stat-label">довольных клиентов</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">успешных транзакций</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">поддержка клиентов</div>
+                </div>
+            </div>
+
+            <div class="about-text fade-in">
+                <h3>Наша история</h3>
+                <p>GameKeys начал свой путь в 2019 году как небольшой проект нескольких друзей-геймеров, которые хотели предложить своим товарищам доступные и качественные ключи к играм. За прошедшие годы мы выросли в команду профессионалов, которая гордится каждым ключом, который мы продаем.</p>
+                <p>Наша миссия — сделать гейминг доступным для всех, независимо от бюджета. Мы стремимся к тому, чтобы каждая покупка была безопасной, удобной и приносила удовольствие.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-statement">
+        <div class="container">
+            <h2>Наша миссия</h2>
+            <p>Мы верим, что игры должны быть доступны каждому. GameKeys объединяет геймеров со всего мира, предлагая им лучшие предложения на рынке. Наша команда работает день и ночь, чтобы обеспечить вам:</p>
+            <ul style="text-align: left; max-width: 800px; margin: 20px auto; color: white;">
+                <li>Ключи от проверенных издателей</li>
+                <li>Безопасные и быстрые транзакции</li>
+                <li>Персональную поддержку 24/7</li>
+                <li>Честные цены без скрытых комиссий</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Наша команда</h2>
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <img src="https://via.placeholder.com/120" alt="Алексей Иванов" class="team-photo">
+                    <div class="team-name">Алексей Иванов</div>
+                    <div class="team-role">Генеральный директор</div>
+                    <div class="team-description">Руководит стратегией компании и развитием бизнеса. Геймер с детства, мечтает сделать гейминг доступным для всех.</div>
+                </div>
+                <div class="team-member fade-in">
+                    <img src="https://via.placeholder.com/120" alt="Мария Кузнецова" class="team-photo">
+                    <div class="team-name">Мария Кузнецова</div>
+                    <div class="team-role">Руководитель отдела продаж</div>
+                    <div class="team-description">Отвечает за взаимодействие с клиентами и развитие партнерских программ. Любит помогать геймерам находить лучшие предложения.</div>
+                </div>
+                <div class="team-member fade-in">
+                    <img src="https://via.placeholder.com/120" alt="Иван Петров" class="team-photo">
+                    <div class="team-name">Иван Петров</div>
+                    <div class="team-role">Специалист по ключам</div>
+                    <div class="team-description">Обеспечивает качество ключей и работу с издателями. Знает все новинки и лучшие скидки на рынке.</div>
+                </div>
+                <div class="team-member fade-in">
+                    <img src="https://via.placeholder.com/120" alt="Анастасия Сидорова" class="team-photo">
+                    <div class="team-name">Анастасия Сидорова</div>
+                    <div class="team-role">Менеджер поддержки</div>
+                    <div class="team-description">Решает вопросы клиентов 24/7.Always ready to help with a smile!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certificates-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Наши сертификаты и партнеры</h2>
+            <div class="certificates-grid">
+                <div class="certificate-item fade-in">
+                    <div class="certificate-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="certificate-name">Сертифицированный партнер Steam</div>
+                    <p style="color: #666; font-size: 14px;">Официальный статус от крупнейшей игровой платформы</p>
+                </div>
+                <div class="certificate-item fade-in">
+                    <div class="certificate-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="certificate-name">PCI DSS Сертифицирован</div>
+                    <p style="color: #666; font-size: 14px;">Безопасные транзакции с защитой данных</p>
+                </div>
+                <div class="certificate-item fade-in">
+                    <div class="certificate-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="certificate-name">SSL Защита</div>
+                    <p style="color: #666; font-size: 14px;">Защита всех платежей и данных клиентов</p>
+                </div>
+                <div class="certificate-item fade-in">
+                    <div class="certificate-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="certificate-name">Партнерство с издателями</div>
+                    <p style="color: #666; font-size: 14px;">Работаем напрямую с разработчиками игр</p>
+                </div>
+                <div class="certificate-item fade-in">
+                    <div class="certificate-icon"><i class="fas fa-star"></i></div>
+                    <div class="certificate-name">Отличные отзывы клиентов</div>
+                    <p style="color: #666; font-size: 14px;">99% удовлетворенных покупателей</p>
+                </div>
+                <div class="certificate-item fade-in">
+                    <div class="certificate-icon"><i class="fas fa-lock"></i></div>
+                    <div class="certificate-name">Безопасность данных</div>
+                    <p style="color: #666; font-size: 14px;">Соблюдение всех стандартов защиты информации</p>
+                </div>
+            </div>
+        </div>
+    </section>

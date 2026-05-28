@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // База данных игр (можно расширить)
     const games = {
-        '1': { id: '1', name: 'Cyberpunk 2077', price: 1999, discount: 3499, image: 'https://via.placeholder.com/60x60?text=CYBER' },
-        '2': { id: '2', name: 'The Witcher 3: Wild Hunt', price: 1499, discount: 2499, image: 'https://via.placeholder.com/60x60?text=WITCHER' },
-        '3': { id: '3', name: 'Doom Eternal', price: 1299, discount: 2199, image: 'https://via.placeholder.com/60x60?text=DOOM' },
-        '4': { id: '4', name: 'Grand Theft Auto V', price: 999, discount: 1999, image: 'https://via.placeholder.com/60x60?text=GTA' }
+        '1': { id: '1', name: 'Cyberpunk 2077', price: 1999, discount: 3499, image: 'https://avatars.mds.yandex.net/i?id=4946644b1e6bac0dd4c90f7cd8c6caaf1b63649e-7546005-images-thumbs&n=13' },
+        '2': { id: '2', name: 'The Witcher 3: Wild Hunt', price: 1499, discount: 2499, image: 'https://avatars.mds.yandex.net/get-mpic/20182864/2a0000019d95607429b3604e4592ef7d3fd4/9hq' },
+        '3': { id: '3', name: 'Doom Eternal', price: 1299, discount: 2199, image: 'https://avatars.mds.yandex.net/i?id=8b722ffe00d95231ce319518851209d1e0cb88af-12890380-images-thumbs&n=13' },
+        '4': { id: '4', name: 'Grand Theft Auto V', price: 999, discount: 1999, image: 'https://avatars.mds.yandex.net/i?id=12802b7e14f31998e295d799d4d9beb229107aae-4451422-images-thumbs&n=13' }
     };
 
     // Кнопки "В корзину" (добавляем слушатели событий)
