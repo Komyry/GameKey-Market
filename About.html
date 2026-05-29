@@ -291,19 +291,26 @@
                 </ul>
             </nav>
             <div class="header-buttons">
-                <div class="user-info" id="userInfo">
-                    <span id="userName"></span>
-                    <button class="btn logout-btn" id="logoutBtn">Выйти</button>
-                </div>
                 <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Поиск игр...">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Поиск игр..."
+                        onkeyup="filterGames()"
+                    >
                     <button id="searchButton"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="cart-icon" id="cartIcon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </div>
-            </div>
+                <div class="profile-icon" id="profileIcon">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="#" class="profile-link" id="logoutLink">Выйти</a>
+                    </div>
+                </div>
+            </div>            
         </div>
     </header>
 
@@ -361,25 +368,25 @@
             <h2 style="text-align: center; margin-bottom: 40px;">Наша команда</h2>
             <div class="team-grid">
                 <div class="team-member fade-in">
-                    <img src="https://via.placeholder.com/120" alt="Алексей Иванов" class="team-photo">
+                    <img src="https://i.pinimg.com/originals/74/a3/b6/74a3b6a8856b004dfff824ae9668fe9b.jpg?nii=t" alt="Алексей Иванов" class="team-photo">
                     <div class="team-name">Алексей Иванов</div>
                     <div class="team-role">Генеральный директор</div>
                     <div class="team-description">Руководит стратегией компании и развитием бизнеса. Геймер с детства, мечтает сделать гейминг доступным для всех.</div>
                 </div>
                 <div class="team-member fade-in">
-                    <img src="https://via.placeholder.com/120" alt="Мария Кузнецова" class="team-photo">
+                    <img src="https://i.pinimg.com/originals/74/a3/b6/74a3b6a8856b004dfff824ae9668fe9b.jpg?nii=t" alt="Мария Кузнецова" class="team-photo">
                     <div class="team-name">Мария Кузнецова</div>
                     <div class="team-role">Руководитель отдела продаж</div>
                     <div class="team-description">Отвечает за взаимодействие с клиентами и развитие партнерских программ. Любит помогать геймерам находить лучшие предложения.</div>
                 </div>
                 <div class="team-member fade-in">
-                    <img src="https://via.placeholder.com/120" alt="Иван Петров" class="team-photo">
+                    <img src="https://i.pinimg.com/originals/74/a3/b6/74a3b6a8856b004dfff824ae9668fe9b.jpg?nii=t" alt="Иван Петров" class="team-photo">
                     <div class="team-name">Иван Петров</div>
                     <div class="team-role">Специалист по ключам</div>
                     <div class="team-description">Обеспечивает качество ключей и работу с издателями. Знает все новинки и лучшие скидки на рынке.</div>
                 </div>
                 <div class="team-member fade-in">
-                    <img src="https://via.placeholder.com/120" alt="Анастасия Сидорова" class="team-photo">
+                    <img src="https://i.pinimg.com/originals/74/a3/b6/74a3b6a8856b004dfff824ae9668fe9b.jpg?nii=t" alt="Анастасия Сидорова" class="team-photo">
                     <div class="team-name">Анастасия Сидорова</div>
                     <div class="team-role">Менеджер поддержки</div>
                     <div class="team-description">Решает вопросы клиентов 24/7.Always ready to help with a smile!</div>

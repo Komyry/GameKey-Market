@@ -175,3 +175,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // -------- Существующий код --------
+    // ... (всё, что было раньше в вашем скрипте)
+
+    // -------- Новый код для меню профиля --------
+    const profileIcon = document.getElementById('profileIcon');
+    const profileMenu = document.getElementById('profileMenu');
+    const logoutLink = document.getElementById('logoutLink');
+
+    // Проверка авторизации
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser) {
+        profileMenu.style.display = 'none';
+        logoutLink.style.display = 'none';
+        return;
+    }
+
+    // Показываем/скрываем меню профиля при наведении
+    profileIcon.addEventListener('mouseenter', function() {
+        profileMenu.classList.add('show');
+    });
+
+    profileIcon.addEventListener('mouseleave', function() {
+        profileMenu.classList.remove('show');
+    });
+
+    // Обработчик выхода
+    logoutLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        localStorage.removeItem('currentUser');
+        alert('Вы вышли из аккаунта!');
+        window.location.href = 'Reg.html';
+    });
+
+    // -------- Запуск функции обновления корзины --------
+    updateCart();
+});

@@ -22,11 +22,6 @@
                 </ul>
             </nav>
             <div class="header-buttons">
-                <div class="user-info" id="userInfo">
-                    <span id="userName"></span>
-                    <button class="btn logout-btn" id="logoutBtn">Выйти</button>
-                </div>               
-                <!-- Обновлённая строка поиска (заменить существующую) -->
                 <div class="search-bar">
                     <input
                         type="text"
@@ -40,7 +35,13 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </div>
-            </div>
+                <div class="profile-icon" id="profileIcon">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="profile-menu" id="profileMenu">
+                        <a href="#" class="profile-link" id="logoutLink">Выйти</a>
+                    </div>
+                </div>
+            </div>            
         </div>
     </header>
 
